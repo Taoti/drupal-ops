@@ -1,0 +1,56 @@
+recipe: pantheon
+config:
+  framework: drupal8
+  xdebug: false
+
+events:
+  post-start:
+    - appserver: composer install
+  post-db-import:
+    - appserver: drush cr
+
+services:
+  appserver:
+    build_as_root:
+      - curl -sL https://deb.nodesource.com/setup_12.x | bash -
+      - apt-get install -y nodejs
+      - npm install --global gulp-cli stylelint stylelint-no-browser-hacks stylelint-config-standard stylelint-order
+      - mkdir -p /root/tmp
+      - chmod 666 /root/tmp
+      - mkdir -p /app/web/sites/simpletest/browser-output
+      - chmod 777 -R /app/web/sites/simpletest
+      - /usr/local/bin/composer self-update
+    overrides:
+      environment:
+        PHP_IDE_CONFIG: serverName=localhost
+        XDEBUG_MODE: debug
+        XDEBUG_SESSION: PHPSTORM
+      volumes:
+        - ${HOME}/.lando/composer_cache:/var/www/.composer
+  database:
+    # Uncomment this line and change the port as needed to access the database from an external
+    # tool such as MySQL Workbench - access will then be mysql://pantheon:pantheon@localhost:PORT
+    #portforward: 33308
+
+    # Default Pantheon lando recipe does not use Drupal 9's minimum MariaDB version.
+    overrides:
+      image: bitnami/mariadb:10.4.12
+
+tooling:
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for nginx.
+    cmd:
+      - rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini -f
+      - docker-php-ext-enable xdebug
+      - pkill -o -USR2 php-fpm
+      - echo "Xdebug enabled"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for nginx.
+    cmd:
+      - rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini -f
+      - pkill -o -USR2 php-fpm
+      - echo "Xdebug disabled"
+    user: root

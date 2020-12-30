@@ -1,0 +1,22 @@
+{
+    "name": "taoti/drupal-ops",
+    "description": "Taoti ops files.",
+    "type": "project",
+    "license": "MIT",
+    "conflict": {
+        "drupal/core": "<8.8"
+    },
+    "require": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+        "phpspec/prophecy-phpunit": "^2",
+        "phpunit/phpunit": "^9.0"
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "file-mapping": {
+                "[project-root]/.lando.base.yml": "assets/.lando.base.yml",
+                "[project-root]/phpcs.xml.dist": "assets/phpcs.xml.dist"
+            }
+        }
+    }
+}
