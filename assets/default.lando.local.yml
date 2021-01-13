@@ -4,3 +4,13 @@
 # Copy one or merge multiple with custom changes into .lando.local.yml.
 # Do note that if you are asking for debug help, including your .lando.local.yml
 # is important.
+
+# Example 1
+# Remember some credentials on osx.
+services:
+  appserver:
+    build_as_root:
+      - curl http://github-media-downloads.s3.amazonaws.com/osx/git-credential-osxkeychain -o git-credential-osxkeychain
+      - mv git-credential-osxkeychain /usr/local/bin/
+      - chmod u+x /usr/local/bin/git-credential-osxkeychain
+      - git config --global credential.helper osxkeychain
