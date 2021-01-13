@@ -1,0 +1,6 @@
+# As well as the .lando.yml and .lando.base.yml configuration files, you can
+# also use .lando.local.yml for local personal changes. This file provides some
+# examples that may be helpful depending on your system and usage.
+# Copy one or merge multiple with custom changes into .lando.local.yml.
+# Do note that if you are asking for debug help, including your .lando.local.yml
+# is important.

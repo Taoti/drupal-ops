@@ -17,6 +17,7 @@
         "drupal-scaffold": {
             "file-mapping": {
                 "[project-root]/.lando.base.yml": "assets/.lando.base.yml",
+                "[project-root]/default.lando.local.yml": "assets/default.lando.local.yml",
                 "[project-root]/phpcs.xml.dist": "assets/phpcs.xml.dist"
             }
         }
