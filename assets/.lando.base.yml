@@ -6,6 +6,7 @@ config:
 events:
   post-start:
     - appserver: composer install
+    - appserver: composer build-theme
   post-db-import:
     - appserver: drush cr
 
