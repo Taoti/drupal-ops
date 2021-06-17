@@ -13,15 +13,15 @@ different versions of this. The default case should be `9.x-pantheon`
 
 ## Enabling this project
 
-This project must be enabled in the top-level composer.json file, or it will be
-ignored and will not perform any of its functions. `.lando.base.yml` should be
-committed to the project to ensure those using lando don't have to run an
+This project must be enabled in the top-level `composer.json` file, or it will
+be ignored and will not perform any of its functions. `.lando.base.yml` should
+be committed to the project to ensure those using lando don't have to run an
 initial `composer install` outside of lando.
-```
+```json
 {
     ...
     "require-dev": {
-        "taoti/drupal-ops"
+        "taoti/drupal-ops": "dev-8.x-pantheon"
     },
     ...
     "extra": {
