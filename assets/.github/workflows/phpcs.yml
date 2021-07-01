@@ -1,0 +1,40 @@
+name: Drupal coding standards
+
+on:
+  pull_request:
+    paths-ignore:
+      - "**/libraries/**"
+      - "**/node_modules/**"
+      - "**/source/**"
+      - "**/vendor/**"
+
+jobs:
+  phpcs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # 0 indicates all history for all branches and tags.
+
+      # Need to install Composer to be able to add the coding standards rules.
+      - name: Installing Composer
+        run: |
+          php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+          php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62c56153228907f1545c228516cbf63f885e036d37e9a59d27d63f46af1d4d07ee0f76181c7d3') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+          php composer-setup.php
+          php -r "unlink('composer-setup.php');"
+
+      - name: Downloading and installing PHP_CodeSniffer and the Drupal coding standards rules
+        run: |
+          php composer.phar global require --optimize-autoloader --sort-packages squizlabs/php_codesniffer=* drupal/coder
+          export PATH="$HOME/.composer/vendor/bin:$PATH"
+          phpcs --config-set installed_paths $HOME/.composer/vendor/drupal/coder/coder_sniffer
+
+      - name: Checking coding standards
+        uses: thenabeel/action-phpcs@v8
+        with:
+          files: "**.inc,**.install,**.md,**.module,**.php,**.profile,**.test,**.txt,**.theme,**.yml"
+          phpcs_path: $HOME/.composer/vendor/bin/phpcs
+          standard: phpcs.xml
+          scope: files
