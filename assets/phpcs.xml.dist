@@ -11,6 +11,9 @@
   <exclude-pattern>*/source/*</exclude-pattern>
   <exclude-pattern>*/vendor/*</exclude-pattern>
   <exclude-pattern>*/README.md</exclude-pattern>
+  <exclude-pattern>*/default.settings.*</exclude-pattern>
+  <exclude-pattern>*/default.services.*</exclude-pattern>
+  <exclude-pattern>*/settings.*.php</exclude-pattern>
 
   <rule ref="Drupal"/>
 
@@ -39,10 +42,13 @@
     </properties>
   </rule>
   <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
-  <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint"/>
+  <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
+    <exclude-pattern>*\.install</exclude-pattern>
+  </rule>
   <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification">
     <exclude-pattern>*\.module</exclude-pattern>
     <exclude-pattern>*\.theme</exclude-pattern>
+    <exclude-pattern>*\.install</exclude-pattern>
   </rule>
   <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/>
   <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.UselessAnnotation">
@@ -51,7 +57,10 @@
   <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification">
     <severity>0</severity>
   </rule>
-  <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint"/>
+  <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
+    <exclude-pattern>*\.install</exclude-pattern>
+    <exclude-pattern>*\.theme</exclude-pattern>
+  </rule>
   <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
   <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
   <rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>

@@ -27,9 +27,8 @@ jobs:
 
       - name: Downloading and installing PHP_CodeSniffer and the Drupal coding standards rules
         run: |
-          php composer.phar global require --optimize-autoloader --sort-packages squizlabs/php_codesniffer=* drupal/coder
+          php composer.phar global require --optimize-autoloader --sort-packages squizlabs/php_codesniffer=* drupal/coder "slevomat/coding-standard:^6.0" "dealerdirect/phpcodesniffer-composer-installer:^0.7"
           export PATH="$HOME/.composer/vendor/bin:$PATH"
-          phpcs --config-set installed_paths $HOME/.composer/vendor/drupal/coder/coder_sniffer
 
       - name: Checking coding standards
         uses: thenabeel/action-phpcs@v8
