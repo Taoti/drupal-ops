@@ -55,3 +55,9 @@ tooling:
       - pkill -o -USR2 php-fpm
       - echo "Xdebug disabled"
     user: root
+  xdebug-find-ext-path:
+    service: appserver
+    description: Find path of xdebug.so file
+    cmd:
+      - find /usr/local/lib/php/extensions/ -name "xdebug.so"
+    user: root
