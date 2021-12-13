@@ -28,7 +28,7 @@ services:
         XDEBUG_SESSION: PHPSTORM
       volumes:
         - ${HOME}/.lando/composer_cache:/var/www/.composer
-  database:
+  #database:
     # Uncomment this line and change the port as needed to access the database from an external
     # tool such as MySQL Workbench - access will then be mysql://pantheon:pantheon@localhost:PORT
     #portforward: 33308
