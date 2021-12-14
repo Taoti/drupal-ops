@@ -14,6 +14,9 @@
   <exclude-pattern>*/default.settings.*</exclude-pattern>
   <exclude-pattern>*/default.services.*</exclude-pattern>
   <exclude-pattern>*/settings.*.php</exclude-pattern>
+  <exclude-pattern>*/web/update.php</exclude-pattern>
+  <exclude-pattern>*/web/index.php</exclude-pattern>
+  <exclude-pattern>*/web/autoload.php</exclude-pattern>
 
   <rule ref="Drupal"/>
 
