@@ -60,9 +60,10 @@
   <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification">
     <severity>0</severity>
   </rule>
-  <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
-    <exclude-pattern>*\.install</exclude-pattern>
+  <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification">
+    <exclude-pattern>*\.module</exclude-pattern>
     <exclude-pattern>*\.theme</exclude-pattern>
+    <exclude-pattern>*\.install</exclude-pattern>
   </rule>
   <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
   <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
