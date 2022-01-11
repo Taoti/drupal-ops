@@ -20,8 +20,12 @@
                 "[project-root]/default.lando.local.yml": "assets/default.lando.local.yml",
                 "[project-root]/phpcs.xml.dist": "assets/phpcs.xml.dist",
                 "[project-root]/.github/workflows/phpcs.yml": "assets/.github/workflows/phpcs.yml",
-                "[project-root]/phpcs.xml": "assets/phpcs.xml"
-            }
-        }
+                "[project-root]/phpcs.xml": {
+                    "mode": "replace",
+                    "path": "assets/phpcs.xml",
+					"overwrite": false
+				}
+			}
+		}
     }
 }
