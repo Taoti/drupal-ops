@@ -17,6 +17,7 @@
   <exclude-pattern>*/web/update.php</exclude-pattern>
   <exclude-pattern>*/web/index.php</exclude-pattern>
   <exclude-pattern>*/web/autoload.php</exclude-pattern>
+  <exclude-pattern>*/themes/*/CHANGELOG.md</exclude-pattern>
 
   <rule ref="Drupal"/>
 
