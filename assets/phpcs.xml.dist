@@ -25,7 +25,6 @@
   <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
   <rule ref="SlevomatCodingStandard.Classes.ClassStructure"/>
   <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/>
-  <rule ref="SlevomatCodingStandard.Classes.UnusedPrivateElements"/>
   <rule ref="SlevomatCodingStandard.Classes.UselessLateStaticBinding"/>
   <rule ref="SlevomatCodingStandard.ControlStructures.DisallowContinueWithoutIntegerOperandInSwitch"/>
   <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
