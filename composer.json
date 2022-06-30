@@ -1,24 +1,20 @@
 {
     "name": "taoti/drupal-ops",
-    "description": "Taoti ops files -- for Pantheon + Drupal 9+.",
+    "description": "Taoti Drupal ops files.",
     "type": "project",
     "license": "MIT",
     "conflict": {
-        "drupal/core": "<9.0"
+        "drupal/core": "<9.4"
     },
     "require": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-        "drupal/core-dev": "^9",
-        "phpspec/prophecy-phpunit": "^2",
-        "phpunit/phpunit": "^9.0"
+        "drupal/core-dev": "^9.4 || ^10.0"
     },
     "extra": {
         "drupal-scaffold": {
             "file-mapping": {
-                "[project-root]/.lando.base.yml": "assets/.lando.base.yml",
+                "[project-root]/.github/workflows/phpcs.yml": "assets/.github/workflows/phpcs.yml",
                 "[project-root]/default.lando.local.yml": "assets/default.lando.local.yml",
                 "[project-root]/phpcs.xml.dist": "assets/phpcs.xml.dist",
-                "[project-root]/.github/workflows/phpcs.yml": "assets/.github/workflows/phpcs.yml",
                 "[project-root]/phpcs.xml": {
                     "mode": "replace",
                     "path": "assets/phpcs.xml",
