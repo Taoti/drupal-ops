@@ -6,7 +6,7 @@ for sites as well as taking care of some dev dependencies.
 Depending on your hosting provider, you will likely want to also require:
 
 - Pantheon: [taoti/drupal-pantheon](https://github.com/taoti/drupal-pantheon)
-- Amazee: coming soon
+- Amazee: [taoti/drupal-amazee](https://github.com/taoti/drupal-amazee)
 
 ## Enabling this project
 
