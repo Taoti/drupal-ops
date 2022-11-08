@@ -31,3 +31,14 @@ Important! Make sure to include taoti/drupal-ops as an allowed package in
     }
 }
 ```
+
+## Bad request blocking.
+
+With most hosts that Taoti uses, we do not have direct access to server configuration.
+There are at the same time, many paths that Drupal sites will *NEVER* have and waste
+time with bot loads. settings.taoti.php attempts to pre-emptively block many of those
+before Drupal is fully initiliazed. To use, add an include line to `settings.php` like
+```php
+include __DIR__ . "/settings.taoti.php";
+
+```

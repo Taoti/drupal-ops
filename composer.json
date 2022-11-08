@@ -20,7 +20,8 @@
                     "mode": "replace",
                     "path": "assets/phpcs.xml",
 					"overwrite": false
-				}
+				},
+                "[web-root]/sites/default/settings.taoti.php": "assets/settings.taoti.php"
 			}
 		}
     }
