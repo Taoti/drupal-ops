@@ -28,7 +28,7 @@ if (isset($_SERVER['REQUEST_URI'])) {
     'CMSPages',
     'CMSTemplates',
     'db.php',
-    'dbconfig.zip'
+    'dbconfig.zip',
     'DesktopModule',
     '_dump',
     '.env',
