@@ -42,3 +42,5 @@ before Drupal is fully initiliazed. To use, add an include line to `settings.php
 include __DIR__ . "/settings.taoti.php";
 
 ```
+This should be after the inclusion of the host specific settings file and before the 
+inclusion of the local settings file if present.
