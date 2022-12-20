@@ -17,6 +17,12 @@ if (isset($databases['default']['default'])) {
 if (isset($_ENV['LANDO'])) {
   $config['config_split.config_split.local']['status'] = TRUE;
   $config['config_split.config_split.dev']['status'] = TRUE;
+  $config['config_split.config_split.prod']['status'] = FALSE;
+}
+if ((isset($_ENV['PANTHEON_ENVIRONMENT']) && $_ENV['PANTHEON_ENVIRONMENT'] !== 'live') ||
+    (isset($_ENV['LAGOON_ENVIRONMENT_TYPE']) && $_ENV['LAGOON_ENVIRONMENT_TYPE'] !== 'production')) {
+  $config['config_split.config_split.prod']['status'] = FALSE;
+  $config['config_split.config_split.dev']['status'] = TRUE;
 }
 
 /**
