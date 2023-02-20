@@ -1,5 +1,7 @@
 # taoti/drupal-ops
 
+__Use Taoti/drupal-profile instead__
+
 This project provides managed/simplified updating of some of Taoti's Drupal standard ops aspects
 for sites as well as taking care of some dev dependencies.
 
