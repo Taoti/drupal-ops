@@ -4,7 +4,7 @@
     "type": "project",
     "license": "MIT",
     "conflict": {
-        "drupal/core": "<9.0"
+        "drupal/core": "<8.9"
     },
     "require": {
         "composer/composer": "^1.10.22",
