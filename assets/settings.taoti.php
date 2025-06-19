@@ -49,7 +49,6 @@ if (isset($_SERVER['REQUEST_URI'])) {
     'backup.zip',
     'backup.tar',
     'beez',
-    'bkp',
     'build.xml',
     'CMSHelp',
     'CMSPages',
