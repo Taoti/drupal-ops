@@ -4,10 +4,7 @@
     "type": "project",
     "license": "MIT",
     "conflict": {
-        "drupal/core": "<9.0"
-    },
-    "require": {
-        "drupal/core-dev": "^9.0 || ^10.0"
+        "drupal/core": "<10.3"
     },
     "extra": {
         "drupal-scaffold": {

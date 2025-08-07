@@ -1,12 +1,11 @@
 # taoti/drupal-ops
 
-__Use Taoti/drupal-profile instead__
-
 This project provides managed/simplified updating of some of Taoti's Drupal standard ops aspects
 for sites as well as taking care of some dev dependencies.
 
 Depending on your hosting provider, you will likely want to also require:
 
+- AWS [taoti/drupal-aws](https://github.com/taoti/drupal-aws)
 - Pantheon: [taoti/drupal-pantheon](https://github.com/taoti/drupal-pantheon)
 - Amazee: [taoti/drupal-amazee](https://github.com/taoti/drupal-amazee)
 
@@ -33,16 +32,3 @@ Important! Make sure to include taoti/drupal-ops as an allowed package in
     }
 }
 ```
-
-## Bad request blocking.
-
-With most hosts that Taoti uses, we do not have direct access to server configuration.
-There are at the same time, many paths that Drupal sites will *NEVER* have and waste
-time with bot loads. settings.taoti.php attempts to pre-emptively block many of those
-before Drupal is fully initiliazed. To use, add an include line to `settings.php` like
-```php
-include __DIR__ . "/settings.taoti.php";
-
-```
-This should be after the inclusion of the host specific settings file and before the 
-inclusion of the local settings file if present.
