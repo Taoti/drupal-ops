@@ -28,3 +28,8 @@ if (isset($_ENV['HOSTING_ENVIRONMENT']) && $_ENV['HOSTING_ENVIRONMENT'] !== 'liv
  * Place the config directory outside of the Drupal root.
  */
 $settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/sync';
+
+/**
+ * Allow caching of the state by default.
+ */
+$settings['state_cache'] = TRUE;
