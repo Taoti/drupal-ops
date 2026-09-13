@@ -5,6 +5,8 @@
 
 command:
   sql:
+    options:
+      extra: "--skip-ssl"
     dump:
       options:
         # Omit cache and similar tables (including during a sql:sync).
